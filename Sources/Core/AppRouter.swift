@@ -1,8 +1,6 @@
 import Foundation
 import UIKit
 
-public typealias Func<T, U> = (T) -> U
-
 /// Namespacing class 
 open class AppRouter {
     /// Provides application keyWindow. In normal cases returns UIApplication.sharedApplication().delegate?.window if available or creates new one if not.
@@ -27,7 +25,7 @@ open class AppRouter {
     public init() {}
     
     /// Defines AppRouter output target
-    open static var debugOutput: ARDebugOutputProtocol = DebugOutput.nsLog
+    public static var debugOutput: ARDebugOutputProtocol = DebugOutput.nsLog
     internal static func print(_ str: String) {
         debugOutput.debugOutput(str)
     }
